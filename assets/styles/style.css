@@ -6,11 +6,16 @@
 
 body {
   font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aliceblue;
 }
 
 .card {
-  width: 160px;
-  height: 160px;
+  width: 100px;
+  height: 100px;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
@@ -52,7 +57,7 @@ body {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
   font-size: 50px;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -66,4 +71,11 @@ body {
   border: none;
   border-radius: 10px;
   margin-top: 10px;
+}
+
+#gameBoard {
+  max-width: 1400px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  gap: 10px;
 }
