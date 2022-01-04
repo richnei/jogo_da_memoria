@@ -24,6 +24,31 @@ let emojis = [
   "sol",
 ];
 
+let cards = null;
+
+starGame();
+
+function starGame() {
+  cards = createCardsFromEmojis(emojis);
+  shuffleCards(cards);
+  console.log(cards);
+}
+
+function shuffleCards(cards) {
+  let currentIndex = cards.length;
+  let randomIndex = 0;
+
+  while (currentIndex !== 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    [cards[randomIndex], cards[currentIndex]] = [
+      cards[currentIndex],
+      cards[randomIndex],
+    ];
+  }
+}
+
 createCardsFromEmojis(emojis);
 function createCardsFromEmojis(emojis) {
   let cards = [];
@@ -32,24 +57,24 @@ function createCardsFromEmojis(emojis) {
     cards.push(createPairFromEmoji(emoji));
   }
 
-  return cards.flatmap(pair => pair);
-}
+  return cards.flatMap((pair) => pair);
 
-function createPairFromEmoji(emoji) {
-  return [
-    {
-      id: createIdWithEmoji(emoji),
-      icon: emoji,
-      flipped: false,
-    },
-    {
-      id: createIdWithEmoji(emoji),
-      icon: emoji,
-      flipped: false,
-    },
-  ];
-}
+  function createPairFromEmoji(emoji) {
+    return [
+      {
+        id: createIdWithEmoji(emoji),
+        icon: emoji,
+        flipped: false,
+      },
+      {
+        id: createIdWithEmoji(emoji),
+        icon: emoji,
+        flipped: false,
+      },
+    ];
+  }
 
-function createIdWithEmoji(emoji) {
-  return emoji + parseInt(Math.random() * 1000);
+  function createIdWithEmoji(emoji) {
+    return emoji + parseInt(Math.random() * 1000);
+  }
 }
