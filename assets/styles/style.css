@@ -21,6 +21,7 @@ body {
   transition: transform 0.5s;
 }
 
+
 .card_back,
 .card_front {
   width: 100%;
