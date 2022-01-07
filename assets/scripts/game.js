@@ -3,6 +3,31 @@ let game = {
   firstCard: null,
   secondCard: null,
 
+  emojis: [
+    "abobora",
+    "arvore_natal",
+    "bola_tenis",
+    "bomba",
+    "cabana",
+    "cacto",
+    "diabo_roxo",
+    "diabo_vermelho",
+    "fantasma",
+    "fogo",
+    "foguete",
+    "lua",
+    "mundo",
+    "palhaco",
+    "relogio",
+    "robo",
+    "rosa",
+    "rosquinha",
+    "semaforo",
+    "sol",
+  ],
+
+  cards: null,
+
   setCard: function (id) {
     let card = this.cards.filter((card) => card.id === id)[0];
 
@@ -35,7 +60,7 @@ let game = {
     this.lockMode = false;
   },
 
-  unflipCards(){
+  unflipCards() {
     this.firstCard.flipped = false;
     this.secondCard.flipped = false;
     this.clearCards();
@@ -44,31 +69,6 @@ let game = {
   checkGameOver() {
     return this.cards.filter((card) => !card.flipped).length == 0;
   },
-
-  emojis: [
-    "abobora",
-    "arvore_natal",
-    "bola_tenis",
-    "bomba",
-    "cabana",
-    "cacto",
-    "diabo_roxo",
-    "diabo_vermelho",
-    "fantasma",
-    "fogo",
-    "foguete",
-    "lua",
-    "mundo",
-    "palhaco",
-    "relogio",
-    "robo",
-    "rosa",
-    "rosquinha",
-    "semaforo",
-    "sol",
-  ],
-
-  cards: null,
 
   createCardsFromEmojis: function () {
     this.cards = [];
