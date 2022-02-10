@@ -72,4 +72,4 @@ function restart() {
   starGame();
   let gameOverLayer = document.getElementById("gameOver");
   gameOverLayer.style.display = "none";
-}
+} 
